@@ -11,7 +11,14 @@
 ```  
 >添加R Engine  
 ```  
-conda install r-essentials  
+conda install r-essentials  #更新 conda update r-essentials  
+```  
+```  
+将R安装为Engine选项，就可以从NEW菜单下拉列表中创建一个新的R笔记笨  
+```  
+>添加Julia Engine  
+```  
+第一步,下载并安装对应版本的Julia,  [https://julialang.org/downloads](https://julialang.org/downloads)
 ```  
 3.访问和检索数据  
 --  
