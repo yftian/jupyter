@@ -78,6 +78,36 @@ df
 ```  
 包括Python、R、Julia  
 ```
+>使用python生成折线图  
+```  
+import pandas
+import matplotlib
+%matplotlib inline
+
+baby_name = ['Alice','Charles','Diane','Edward']
+number_births = [96, 155, 66, 272]
+dataset = list(zip(baby_name,number_births))
+df = pandas.DataFrame(data = dataset, columns=['Name', 'Number'])
+df['Number'].plot()
+```  
+>使用python生成直方图  
+```  
+import pylab
+import random
+
+random.seed(113)
+
+samples = 1000
+dice = []
+for i in range(samples):
+ total = random.randint(1,6) + random.randint(1,6)
+ dice.append(total)
+
+pylab.hist(dice, bins= pylab.arange(1.5,12.6,1.0))
+pylab.show()
+```  
+>使用python生成密度图  
+
 5.使用各种小部件  
 --  
 ```  
