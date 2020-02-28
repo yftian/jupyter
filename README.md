@@ -5,8 +5,13 @@
 ```  
 2.添加Engine  
 --  
+
 ```  
 如何添加Engine到jupyter,以便使用不同的语言进行开发  
+```  
+>添加R Engine  
+```  
+conda install r-essentials  
 ```  
 3.访问和检索数据  
 --  
