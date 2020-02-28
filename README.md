@@ -32,6 +32,9 @@ conda install r-essentials  #更新 conda update r-essentials
 ```
 访问和检索jupyter中不同格式的文件中的数据  
 ```  
+>读取.csv文件  
+```我们将展示如何使用R访问CSV文件```  
+
 4.可视化分析  
 --  
 ```  
