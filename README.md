@@ -32,10 +32,47 @@ conda install r-essentials  #更新 conda update r-essentials
 ```
 访问和检索jupyter中不同格式的文件中的数据  
 ```  
->读取.csv文件  
+>访问.csv文件(使用R访问CSV文件)  
+```  
+heating <- read.csv(file="https://raw.github.com/vincentarelbundock/Rdatasets/master/csv/Ecdat/Heating.csv", header=TRUE, sep=",")  
+head(heating)  
+``` 
+>访问Json文件(使用js访问Json文件)  
+```  
+//load the JSON dataset
+//http://www.carqueryapi.com/api/0.3/?callback=?&cmd=getModels&make=ford
+var fords = require('/Users/dtoomey/fords.json');
+//display how many Ford models are in our data set
+console.log("There are " + fords.Models.length + " Ford models in the data set");
+//loop over the set
+var index = 1
+for(var i=0; i<fords.Models.length; i++) {
+    //get this model
+    var model = fords.Models[i];
+   //pull it's name
+    var name = model.model_name;
+    //if the model name does not have numerics in it
+    if(! name.match(/[0-9]/i)) {
+        //display the model name
+        console.log("Model " + index + " is a " + name);
+        index++;
+    }
+   //only display the first 5
+   if (index>5) break;
+}
+```  
+>访问flat文件(使用Python访问flat文件)  
+```  
+import pandas as pd
 
-```我们将展示如何使用R访问CSV文件```  
-
+column_names = ["row","id","year","stint","team","g","ab"]
+column_widths = [3,9,4,1,3,2,3]
+df = pd.read_fwf("c:/Users/Dan/baseball.txt",
+ header=None,
+ names=column_names,
+ widths=column_widths)
+df
+```  
 4.可视化分析  
 --  
 ```  
