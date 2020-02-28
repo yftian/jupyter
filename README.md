@@ -18,7 +18,14 @@ conda install r-essentials  #更新 conda update r-essentials
 ```  
 >添加Julia Engine  
 ```  
-第一步,下载并安装对应版本的Julia,  [https://julialang.org/downloads](https://julialang.org/downloads)
+第一步，下载并安装对应版本的Julia,  https://julialang.org/downloads  
+第二步，启动Julia环境，运行Pkg.add("IJulia")  
+```  
+>添加JavaScripy Engine  
+```  
+首先，安装Node.js  
+使用npm工具安装 npm install -g ijavascript  
+将JavaScripy添加到Jupyter中 ijsinstall  
 ```  
 3.访问和检索数据  
 --  
