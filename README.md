@@ -152,12 +152,22 @@ plt.show()
 5.使用各种小部件  
 --  
 ```  
+什么是小部件（widgets）  
+  显示在jupyter笔记本中，用户可以控制与输入控件交互，并能调整笔记本的显示，通过使用小部件，用户可以使用输入设备或者直接调整控件。
+```  
+
+```  
 描述jupyter中的各种Widgets  
 ```
 6.jupyter仪表盘  
 --  
 ```  
-如何使用jupyter仪表盘以及布局扩展  
+jupyter dashboard  
+  Jupyter dashboard是Jupyter的一个扩展，允许笔记本开发人员在特定布局中创建笔记本的视图，而无需使用底层笔记本编码。
+  Grid layout（网格布局）  
+    屏幕在网格中布局，允许在屏幕内垂直和水平排列元素  
+  Report layout（报表布局）  
+    接近标准笔记本，元素沿页面垂直布局
 ```  
 7.共享代码  
 --  
@@ -169,4 +179,3 @@ plt.show()
 ```  
 介绍jupyter访问大数据的方法  
 ```  
-![image](https://github.com/yftian/jupyter/blob/master/image/P8M4~TUG%605%24%25S2C6S%24T%257XN.png)
