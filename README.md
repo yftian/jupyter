@@ -128,3 +128,4 @@ pylab.show()
 ```  
 介绍jupyter访问大数据的方法  
 ```  
+![image](https://github.com/yftian/jupyter/blob/master/image/P8M4~TUG%605%24%25S2C6S%24T%257XN.png)
