@@ -27,6 +27,30 @@ conda install r-essentials  #更新 conda update r-essentials
 使用npm工具安装 npm install -g ijavascript  
 将JavaScripy添加到Jupyter中 ijsinstall  
 ```  
+>添加Java Engine
+```  
+在Jupyter中使用Java
+
+Nitrobenzene
+关注
+2019.12.06 16:45:42
+字数 136
+阅读 141
+1. Ensure JDK updated to the latest version  
+
+2. Download IJava
+     ijava下载地址:[iJava](https://github.com/SpencerPark/IJava/releases)  
+Unzip it into a temporary location. It should have at least the install.py and java folder extracted in there.  
+在install.py和java上层文件夹中打开terminal:
+# Pass the -h option to see the help page
+> python3 install.py -h
+# Otherwise a common install command is
+> python3 install.py --sys-prefix (其实直接运行这步）  
+3. Check if java-kernel loaded  
+>jupyter kernelspec list
+如果kernel列表中有java，则ok了。
+下面在jupyter notebook里面新建代码文件时，可以选用使用java kernel。  
+``` 
 3.访问和检索数据  
 --  
 ```
