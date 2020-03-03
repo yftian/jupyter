@@ -207,9 +207,12 @@ interactive专门用来为值更改时调用处理程序构建的。
 在文本框中更改时收集更改后的内容  
 ```  
 ![text](https://github.com/yftian/jupyter/blob/master/image/text.jpg)  
->Linking widgets together（连接一起来用）  
+
+>Linking widgets together（连接一起来用)  
+
 ![link together](https://github.com/yftian/jupyter/blob/master/image/link%20together.png)  
 ![link2](https://github.com/yftian/jupyter/blob/master/image/link2.png)  
+
 6.jupyter仪表盘  
 --  
 ```  
