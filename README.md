@@ -171,11 +171,114 @@ jupyter dashboard
 ```  
 7.共享代码  
 --  
+>使用Jupyter Notebook  
+>>Jupyter内置将其公开的web服务器功能，假设服务器是其他用户可以访问的，通过配置JUpyter在该服务器上运行，  
+>>为Jupyter安装生成配置文件的命令是：jupyter notebook --generate-config  
+>>此命令生成jupyter_notebook_config.py文件，位于主用户目录。  
+```
+配置如下：  
+c.NotebookApp.certfile = u'/path/to/your/cert/cert.pem'
+c.NotebookApp.keyfile = u'/ path/to/your/cert/key.key'
+c.NotebookApp.ip = '*'
+c.NotebookApp.password = u'hashed-password'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 8888
+```
+>通过web Server(添加到现有的web服务器中)  
 ```  
-如何将你的代码共享给他人  
+配置文件如下：  
+c.NotebookApp.tornado_settings = {
+ 'headers': {
+ 'Content-Security-Policy': "frame-ancestors 'https://yourwebsite.com' 'self' "
+ }
+}  
+替换yourwebsite.com，完成后即可通过网页访问jupyter.
 ```  
+>通过公开的服务器  
+>>目前允许公开分享的服务器GitHub（开源的代码管理系统）  
 8.与大数据交互  
 --  
+>从大文本数据中获取字数
 ```  
-介绍jupyter访问大数据的方法  
+import pyspark
+
+if not 'sc' in globals():
+    sc = pyspark.SparkContext()
+
+text_file = sc.textFile("B09656_09_word_count.ipynb")
+counts = text_file.flatMap(lambda line: line.split(" ")) \
+    .map(lambda word: (word, 1)) \
+    .reduceByKey(lambda a, b: a + b)
+
+for x in counts.collect():
+    print(x)  
+```  
+>从大文本数据排序字数  
+```  
+import pyspark
+
+if not 'sc' in globals():
+ sc = pyspark.SparkContext()
+ 
+text_file = sc.textFile("B09656_09_word_count.ipynb")
+sorted_counts = text_file.flatMap(lambda line: line.split(" ")) \
+ .map(lambda word: (word, 1)) \
+ .reduceByKey(lambda a, b: a + b) \
+ .sortByKey()
+
+for x in sorted_counts.collect():
+ print(x)  
+```  
+>检查大文本日志文件访问  
+```  
+import pyspark
+
+if not 'sc' in globals():
+    sc = pyspark.SparkContext()
+
+textFile = sc.textFile("access_log")
+print(textFile.count(),"access records")
+
+gets = textFile.filter(lambda line: "GET" in line)
+print(gets.count(),"GETs")
+
+posts = textFile.filter(lambda line: "POST" in line)
+print(posts.count(),"POSTs")
+
+other = textFile.subtract(gets).subtract(posts)
+print(other.count(),"Other")
+for x in other.collect():
+    print(x)  
+```  
+>用并行运算计算素数  
+```  
+import pyspark
+if not 'sc' in globals():
+    sc = pyspark.SparkContext()
+
+#check if a number is prime
+def isprime(n):
+    # must be positive
+    n = abs(int(n))
+ 
+    # 2 or more
+    if n < 2:
+        return False
+ 
+    # 2 is the only even prime number
+    if n == 2:
+         return True
+    if not n & 1:
+        return False
+ 
+    # range starts with 3 and only needs to go up the square root of n
+    # for all odd numbers
+    for x in range(3, int(n**0.5)+1, 2):
+        if n % x == 0:
+            return False
+    return True  
+    nums = sc.parallelize(range(1000000))
+
+# Compute the number of primes in the RDD
+print(nums.filter(isprime).count())
 ```  
