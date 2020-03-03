@@ -177,12 +177,39 @@ plt.show()
 --  
 ```  
 什么是小部件（widgets）  
-  显示在jupyter笔记本中，用户可以控制与输入控件交互，并能调整笔记本的显示，通过使用小部件，用户可以使用输入设备或者直接调整控件。
+  显示在jupyter笔记本中，用户可以控制与输入控件交互，并能调整笔记本的显示，通过使用小部件，用户可以使用输入设备或者直接调整控件。  
 ```  
-
+<使用ipleaflet小部件 
 ```  
-描述jupyter中的各种Widgets  
+安装：conda install -c conda-forge ipyleaflet
+```  
+```  
+Jupyter中生成交互式地图。我们可以将地图放入Notebook中，并允许用户使用此部件滚动到不同的视角  
 ```
+![ipyleaflet](https://github.com/yftian/jupyter/blob/master/image/ipyleaflet.png)
+>使用ipywidgets
+```  
+安装：conda install -c conda-forge ipywidgets
+```  
+![ipywidgets](https://github.com/yftian/jupyter/blob/master/image/ipywidgets.png)
+>使用widgets container
+```  
+该控件通常是用来将其他小部件分组到不同容器中。
+```  
+![container](https://github.com/yftian/jupyter/blob/master/image/container.png)
+>使用interactive  
+```  
+interactive专门用来为值更改时调用处理程序构建的。
+```  
+![interactive](https://github.com/yftian/jupyter/blob/master/image/interactive%20.png)
+>使用interactive text（交互式文本）
+```  
+在文本框中更改时收集更改后的内容  
+```  
+![text](https://github.com/yftian/jupyter/blob/master/image/text.jpg)  
+>Linking widgets together（连接一起来用）  
+![link together](https://github.com/yftian/jupyter/blob/master/image/link%20together.png)  
+![link2](https://github.com/yftian/jupyter/blob/master/image/link2.png)  
 6.jupyter仪表盘  
 --  
 ```  
