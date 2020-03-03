@@ -172,9 +172,9 @@ jupyter dashboard
 7.共享代码  
 --  
 >使用Jupyter Notebook  
->>Jupyter内置将其公开的web服务器功能，假设服务器是其他用户可以访问的，通过配置JUpyter在该服务器上运行，  
->>为Jupyter安装生成配置文件的命令是：jupyter notebook --generate-config  
->>此命令生成jupyter_notebook_config.py文件，位于主用户目录。  
+>Jupyter内置将其公开的web服务器功能，假设服务器是其他用户可以访问的，通过配置JUpyter在该服务器上运行，  
+>为Jupyter安装生成配置文件的命令是：jupyter notebook --generate-config  
+>此命令生成jupyter_notebook_config.py文件，位于主用户目录。  
 ```
 配置如下：  
 c.NotebookApp.certfile = u'/path/to/your/cert/cert.pem'
@@ -195,7 +195,8 @@ c.NotebookApp.tornado_settings = {
 替换yourwebsite.com，完成后即可通过网页访问jupyter.
 ```  
 >通过公开的服务器  
->>目前允许公开分享的服务器GitHub（开源的代码管理系统）  
+>目前允许公开分享的服务器GitHub（开源的代码管理系统)  
+
 8.与大数据交互  
 --  
 >从大文本数据中获取字数
